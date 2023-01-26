@@ -8,6 +8,8 @@ export function Header() {
             <div className="flex gap-5">
                 <div>ARDOTL</div>
                 <div>subscribe</div>
+                <div>ARDOTL</div>
+                <div>subscribe</div>
                 <div>shop</div>
                 <div>about</div>
                 <div>gifts</div>
