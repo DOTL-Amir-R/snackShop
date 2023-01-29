@@ -1,3 +1,4 @@
+import { Footer } from "../../layout/core/footer"
 import { Header } from "../../layout/core/header"
 
 export function Home() {
@@ -5,7 +6,7 @@ export function Home() {
         <>
             <div><Header/></div>
             <div>Main</div>
-            <div>Footer</div>
+            <div><Footer/></div>
         </>
     )    
 }
