@@ -4,7 +4,9 @@
     max-width: 1345px;
     margin: 0 auto;
 }
-
+.padd-top-bot-22{
+    padding: 1.40625rem 0;
+}
 /*****typographi*******/
 .font-weight-700{
     font-weight: 700;

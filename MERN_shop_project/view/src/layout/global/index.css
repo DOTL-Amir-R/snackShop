@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*********Utils*************************/
+.container{
+    max-width: 1345px;
+    margin: 0 auto;
+}
+.padd-top-bot-22{
+    padding: 1.40625rem 0;
+}
+/*****typographi*******/
+.color-gray-7a7a7a{
+    color: #7a7a7a;
+}
+.font-weight-700{
+    font-weight: 700;
+}
+.font-weight-400{
+    font-weight: 400;
+}
+.font-size-18{
+    font-size:1.125rem;
+}
+.font-size-27{
+    font-size:1.7rem;
+}
