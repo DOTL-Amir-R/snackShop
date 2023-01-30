@@ -4,7 +4,7 @@ import { Home } from "../page/home";
 export const routes = {
     home:{
         id:'1',
-        path:'/home',
+        path:'/',
         element:<Home/>
     },
     signIn:{

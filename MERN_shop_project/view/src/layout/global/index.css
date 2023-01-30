@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /*********Utils*************************/
+.mouse-pointer{
+    cursor: pointer;
+}
 .container{
     max-width: 1345px;
     margin: 0 auto;
@@ -10,9 +13,19 @@
 .padd-top-bot-22{
     padding: 1.40625rem 0;
 }
+.padd-top-bot-12{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
 /*****typographi*******/
+.color-green-85BB23{
+    color: #85BB23;
+}
 .color-gray-7a7a7a{
     color: #7a7a7a;
+}
+.color-red-fa6161{
+    color: #fa6161;
 }
 .font-weight-700{
     font-weight: 700;
@@ -25,4 +38,22 @@
 }
 .font-size-27{
     font-size:1.7rem;
+}
+.font-size-32{
+    font-size:2rem;
+}
+/***************************/
+.position-relative{
+    position: relative;
+}
+.position-absolute{
+    position: absolute;
+}
+/********borders******/
+
+.border-top-1-color-ddd{
+    border-top: solid 1px #ddd;
+}
+.border-bot-1-color-ddd{
+    border-bottom: solid 1px #ddd;
 }
