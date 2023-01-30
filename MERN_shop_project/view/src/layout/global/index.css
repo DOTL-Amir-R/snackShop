@@ -17,6 +17,9 @@
 .color-gray-7a7a7a{
     color: #7a7a7a;
 }
+.color-red-fa6161{
+    color: #fa6161;
+}
 .font-weight-700{
     font-weight: 700;
 }
@@ -31,4 +34,11 @@
 }
 .font-size-32{
     font-size:2rem;
+}
+/***************************/
+.position-relative{
+    position: relative;
+}
+.position-absolute{
+    position: absolute;
 }
