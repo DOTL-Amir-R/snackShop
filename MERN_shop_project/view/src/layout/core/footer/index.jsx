@@ -1,10 +1,16 @@
 
-import { FaCopyright } from 'react-icons/fa'
+import { FaCopyright, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import '../../global/index.css';
 
 export function Footer() {
     return(
         <div className='flex flex-col container'>
+            <div className='flex justify-center'>
+                <FaFacebook className='color-green-85BB23 font-size-32'/>
+                <FaTwitter className='color-green-85BB23 font-size-32'/>
+                <FaInstagram className='color-green-85BB23 font-size-32'/>
+            </div>
+
             <div className='flex justify-around flex-wrap font-size-18 font-weight-400'>
                 <div >
                     careers
