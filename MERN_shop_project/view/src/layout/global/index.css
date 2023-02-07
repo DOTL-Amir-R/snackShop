@@ -29,6 +29,10 @@
 .items-end{
     align-items: flex-end;
 }
+/*******WIDTH*****/
+.width-77-precent{
+    width: 77.3%;
+}
 /*****typographi*******/
 .color-green-85BB23{
     color: #85BB23;
