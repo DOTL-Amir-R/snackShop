@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/**************CSS_RESET****************/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /*********Utils*************************/
 .mouse-pointer{
     cursor: pointer;
@@ -19,6 +24,10 @@
 .padd-top-bot-12{
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+}
+/*******FLEX_STYLES*********/
+.items-end{
+    align-items: flex-end;
 }
 /*****typographi*******/
 .color-green-85BB23{
