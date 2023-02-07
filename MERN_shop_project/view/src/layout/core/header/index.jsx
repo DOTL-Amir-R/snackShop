@@ -5,7 +5,6 @@ import {
     FaUser,
     FaChevronDown,
 } from 'react-icons/fa';
-import '../../global/index.css';
 import './index.css';
 
 export function Header() {
@@ -51,7 +50,7 @@ export function Header() {
                                 src="https://cdn.shopify.com/s/files/1/0064/7652/9737/files/ireland.svg?v=1584632334"
                                 width="15px"
                                 height="15px"
-                            />{' '}
+                            />
                             irland
                         </div>
                         <div className="flex items-center gap-1">
@@ -59,7 +58,7 @@ export function Header() {
                                 src="https://cdn.shopify.com/s/files/1/0064/7652/9737/files/netherlands.svg?v=1584632334"
                                 width="15px"
                                 height="15px"
-                            />{' '}
+                            />
                             nederland
                         </div>
                         <div className="flex items-center gap-1">
@@ -67,7 +66,7 @@ export function Header() {
                                 src="https://cdn.shopify.com/s/files/1/0558/6118/2631/files/germany.svg?v=1630071157"
                                 width="15px"
                                 height="15px"
-                            />{' '}
+                            />
                             germany
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import { Header } from "../layout/core/header";
 import { Home } from "../page/home";
+import { SignUp } from "../page/signup";
 
 export const routes = {
     home:{
@@ -9,7 +10,7 @@ export const routes = {
     },
     signIn:{
         id:'2',
-        path:'/signin',
-        element:<Header/>
+        path:'/signup',
+        element:<SignUp/>
     },
 }
