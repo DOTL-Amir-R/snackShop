@@ -1,0 +1,19 @@
+/*********Left_Box_Regestration******/
+.snack-box-icon{
+    height: 3.7rem;
+    width: 4rem;
+    object-fit: cover;
+    object-position: 60% 50%;
+}
+/********Component*******/
+.orange-container-small{
+    padding: 0.125rem .6rem 0.125rem;
+    background: #fa701f;
+    line-height: 140%;
+    border-radius: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+}

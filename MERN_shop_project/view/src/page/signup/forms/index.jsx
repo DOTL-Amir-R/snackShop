@@ -3,7 +3,7 @@ import { Input } from "@material-tailwind/react";
 
 export function Forms() {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col width-66-percent">
             <div className="text-2xl font-medium">tell us about you…</div>
             <div>Let’s set up your account, so you can tailor your preferences and we can send you the perfect box!</div>
             <form>
