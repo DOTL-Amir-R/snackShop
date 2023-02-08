@@ -3,14 +3,15 @@ import { Input } from "@material-tailwind/react";
 
 export function Forms() {
     return (
-        <div>
-            <div></div>
-            <div></div>
+        <div className="flex flex-col">
+            <div className="text-2xl font-medium">tell us about you…</div>
+            <div>Let’s set up your account, so you can tailor your preferences and we can send you the perfect box!</div>
             <form>
-                <Inpu variant="standard" label="Standard" />
-                <Input variant="standard" label="Standard" />
-                <Input variant="standard" label="Standard" />
-                <Input variant="standard" label="Standard" />
+                
+                <Input variant="outlined"  color="red" label="first name" />
+                <Input variant="outlined" label="last name" />
+                <Input variant="outlined" label="email address" />
+                <Input variant="outlined" label="password (min 6 characters)" />
             </form>
 
             <div>do you have any allergies?</div>
