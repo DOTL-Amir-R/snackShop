@@ -1,0 +1,17 @@
+/******Component***********/
+.input-classes{
+    border: 0.0625rem #444 solid;
+    height: 3.75rem;
+    padding: 1.875rem 1.125rem 0.625rem;
+    border-radius: 0.625rem;
+
+}
+.input-classes:focus{
+    border: 0.1875rem green solid;
+
+
+}
+.input-label-classes{
+    left: 1.125rem;
+}
+
