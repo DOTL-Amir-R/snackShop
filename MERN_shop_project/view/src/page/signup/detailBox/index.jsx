@@ -50,8 +50,9 @@ export function DetailBox() {
             </div>
             <div className='flex '>
                 {/* <Input style={{ height: '3.13rem'}} size='lg' variant="outlined" color="red" label="add your Code" /> */}
+                
                 <div>
-                    <FloatLabelInput/>
+                    <FloatLabelInput labelText='hiiiii' type='email' classNameInput='border-none'/>
                 </div>
 
                 <button className='custom-button-for-add-redeem-code'>Add code</button>

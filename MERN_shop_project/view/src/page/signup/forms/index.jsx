@@ -1,4 +1,5 @@
 import { Input } from '@material-tailwind/react';
+import { FloatLabelInput } from '../../../components/FloatLableInput';
 
 export function Forms() {
     return (
@@ -10,13 +11,10 @@ export function Forms() {
                     preferences and we can send you the perfect box!
                 </div>
                 <form>
-                    <Input variant="outlined" color="red" label="first name" />
-                    <Input variant="outlined" label="last name" />
-                    <Input variant="outlined" label="email address" />
-                    <Input
-                        variant="outlined"
-                        label="password (min 6 characters)"
-                    />
+                    <FloatLabelInput type='email' labelText='email' classNameInput='border-none' />
+                    <FloatLabelInput type='email' labelText='email' classNameInput='border-none' />
+                    <FloatLabelInput type='email' labelText='email' classNameInput='border-none' />
+                    <FloatLabelInput type='email' labelText='email' classNameInput='border-none' />
                 </form>
 
                 <div>do you have any allergies?</div>
