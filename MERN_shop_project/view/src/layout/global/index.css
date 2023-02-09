@@ -8,6 +8,9 @@
     box-sizing: border-box;
 }
 /*********Utils*************************/
+.gap-31{
+    gap: 1.9375rem;
+}
 .border-radius-10{
     border-radius: 0.625rem;
 }
@@ -48,12 +51,24 @@
 .width-66-percent{
     width: 66.666666666666666%;
 }
+.width-58-percent{
+    width: 58%;
+}
+.width-29-percent{
+    width: 29%;
+}
 /*****typographi*******/
+.white-space-no-wrap{
+    white-space: nowrap;
+}
 .color-black-444{
     color: #444;
 }
 .background-color-light-green-ceeddc{
     background: #ceeddc;
+}
+.background-color-green-0AA550{
+    background-color: #0AA550;
 }
 .color-gray-9b9b9b{
     color: #9b9b9b;

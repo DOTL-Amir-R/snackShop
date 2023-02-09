@@ -17,3 +17,16 @@
     font-size: 1rem;
     color: #fff;
 }
+.custom-button-for-add-redeem-code{
+    border-radius: 0 1rem 1rem 0;
+    flex-basis: fit-content;
+    white-space: nowrap;
+    padding: 0.4rem 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .208px;
+    background-color: #0AA550;
+    color: #fff;
+    border: solid 2px #0AA550;
+    height: 3.13rem;
+}

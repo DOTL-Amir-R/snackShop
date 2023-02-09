@@ -1,0 +1,8 @@
+/***********FloatLabelInput*******/
+.test{
+    border:0;
+}
+.test:focus{
+    border: 0;
+    outline: none;
+}
