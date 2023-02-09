@@ -1,0 +1,32 @@
+/*********Left_Box_Regestration******/
+.snack-box-icon{
+    height: 3.7rem;
+    width: 4rem;
+    object-fit: cover;
+    object-position: 60% 50%;
+}
+/********Component*******/
+.orange-container-small{
+    padding: 0.125rem .6rem 0.125rem;
+    background: #fa701f;
+    line-height: 140%;
+    border-radius: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+}
+.custom-button-for-add-redeem-code{
+    border-radius: 0 1rem 1rem 0;
+    flex-basis: fit-content;
+    white-space: nowrap;
+    padding: 0.4rem 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .208px;
+    background-color: #0AA550;
+    color: #fff;
+    border: solid 2px #0AA550;
+    height: 3.13rem;
+}
