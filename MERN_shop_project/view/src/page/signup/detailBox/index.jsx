@@ -1,13 +1,12 @@
 import { Input } from '@material-tailwind/react';
 import SnackBoxIcon from '../../../assets/img/snackBoxIcon.jpg';
-import { FaTag } from 'react-icons/fa';
+import { FaTag,FaCheckCircle } from 'react-icons/fa';
 import './index.css';
 import { FloatLabelInput } from '../../../components/FloatLableInput';
 
 export function DetailBox() {
     return (
-        <div style={{margin: '2.4rem 0px',
-        padding: '0rem 3rem 0 1rem'}} className="flex flex-col width-29-percent">
+        <div style={{padding: '2.4rem 3rem 0 1rem'}} className="flex flex-col width-29-percent">
             <div className="flex  p-3">
                 <img className="snack-box-icon" src={SnackBoxIcon} />
                 <div className="flex flex-col ml-3 justify-between">
