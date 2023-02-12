@@ -50,35 +50,52 @@ export function Forms() {
                     do you have any allergies?
                 </div>
                 <div>
-                    <div className="flex gap-5">
+                    <div className="flex">
                         {yesOrNo ? (
-                            <div className='flex gap-1'>
-                                <FaCheck />
-                                Yes
-                            </div>
-                        ) : (
-                            <RadioCheckBox onClick={() => {setYesOrNo(!yesOrNo);}} textForCheckBox='Yes'/>
-
-                        )}
-                        {!yesOrNo ? (
-                            <div className='flex gap-1'>
-                                <FaCheck />
+                            <div className="registration-check-box02 flex gap-1 items-center text-lg py-2 pl-5 pr-4 my-2 mr-2 rounded-xl border-1-color-ddd">
+                                <FaCheck color="#a4c433" />
                                 No
                             </div>
                         ) : (
-                            <RadioCheckBox onClick={() => {setYesOrNo(!yesOrNo);}} textForCheckBox='No'/>
+                            <RadioCheckBox
+                                onClick={() => {
+                                    setYesOrNo(!yesOrNo);
+                                }}
+                                textForCheckBox="No"
+                                inputClassName="registration-check-box02 py-2 pl-5 pr-4 my-2 mr-2 rounded-xl border-1-color-ddd"
+                            />
+                        )}
+                        {!yesOrNo ? (
+                            <div className="registration-check-box flex gap-1 items-center text-lg py-2 pl-5 pr-4 my-2 mr-2 rounded-xl border-1-color-ddd">
+                                <FaCheck color="#a4c433" fontStyle="normal" />
+                                Yes
+                            </div>
+                        ) : (
+                            <RadioCheckBox
+                                onClick={() => {
+                                    setYesOrNo(!yesOrNo);
+                                }}
+                                textForCheckBox="Yes"
+                                inputClassName="registration-check-box02 py-2 pl-5 pr-4 my-2 mr-2 rounded-xl border-1-color-ddd"
+                            />
                         )}
                     </div>
                 </div>
 
-                <div>more info</div>
-                <button>Continue</button>
-                <div>
+                <div className='text-lg text-underline mb-5'>more info</div>
+                <button className='flex'>Continue</button>
+                <div className=' mt-7 ml-5'>
                     Receive exclusive offers, delicious rewards and brand new
-                    snack launches to your email inbox. Please read our Privacy
-                    Notice to understand how we use your personal data. By
+                    snack launches to your email inbox. 
+                </div>
+                <div className='mb-5 mt-5 ml-5'>
+                    <p className='my-2.5'>Please read our Privacy
+                    Notice to understand how we use your personal data.</p>
+                                <p className='my-2.5'>
+                                By
                     clicking ‘continue’ you are confirming that you are over 16
                     years old.
+                                </p>
                 </div>
             </div>
         </div>

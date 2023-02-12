@@ -111,7 +111,9 @@
     position: absolute;
 }
 /********borders******/
-
+.text-underline{
+    text-decoration: underline;
+}
 .border-top-1-color-ddd{
     border-top: solid 1px #ddd;
 }
