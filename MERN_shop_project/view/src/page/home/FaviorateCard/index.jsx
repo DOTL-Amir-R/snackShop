@@ -1,7 +1,7 @@
 import React from 'react'
 import { svgObject } from '../../../assets/svg'
 
-function FaviorateCard({titleTag , picture , desc , onlineExclusive="false"}) {
+function FaviorateCard({titleTag , picture , desc, svgs , onlineExclusive="false"}) {
     return (
         <div className="w-60 bg-white border border-gray-200 rounded-lg shadow flex flex-col">
             {titleTag}
@@ -14,9 +14,10 @@ function FaviorateCard({titleTag , picture , desc , onlineExclusive="false"}) {
                 </a>
             </div>
             <div className="flex justify-evenly mb-6">
-                {svgObject.kcal}
-                {svgObject.fiber}
-                {svgObject.Artificial}
+                {svgs.map((svg)=>{
+                    return svg
+                })}
+                
             </div>
         </div>
     )

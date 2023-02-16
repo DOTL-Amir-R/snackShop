@@ -121,11 +121,11 @@ function Main() {
                 </div>
                 <h3 className='text-center text-amber-800 text-4xl my-7 font-semibold'>grazers' favourites</h3>
                 <div className='flex gap-9'>
-                    <FaviorateCard titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-fuchsia-700 text-center'>Lemon & <br></br> Poppyseed Cake</div>} picture={lemonPoppyseed} desc="Zingy lemon & poppy seed cake served with our unique graze afternoon infusion." onlineExclusive={true} />
-                    <FaviorateCard titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-violet-700 text-center'>Cocoa Vanilla <br></br> Protein Flapjack</div>} picture={cocoaVanilla} desc="The perfect protein-packed pick-me-up, combining rich cocoa with whole rolled oats and vanilla." onlineExclusive={false} />
-                    <FaviorateCard titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-slate-900 text-center'>Marmite <br></br> Crunch</div>} picture={marmiteCrunch} desc="Love it or hate it, our marmite crunch brings a hit of savoury tang to roasted veg." onlineExclusive={false} />
-                    <FaviorateCard titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-pink-600 text-center'>Belgian <br></br> Speculoos</div>} picture={speculoos} desc="Belgian speculoos cookie dip and cinnamon pretzel sticks." onlineExclusive={true} />
-                    <FaviorateCard titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-orange-500 text-center'>Smoky Barbecue <br></br> Crunch</div>} picture={bbqCrunch} desc="Barbecue flavoured peas, corn chips & chilli corn." onlineExclusive={false} />
+                    <FaviorateCard svgs={[svgObject.kcal,svgObject.fiber,svgObject.Artificial]} titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-fuchsia-700 text-center'>Lemon & <br></br> Poppyseed Cake</div>} picture={lemonPoppyseed} desc="Zingy lemon & poppy seed cake served with our unique graze afternoon infusion." onlineExclusive={true} />
+                    <FaviorateCard svgs={[svgObject.fiberBlue,svgObject.protein,svgObject.oat]} titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-violet-700 text-center'>Cocoa Vanilla <br></br> Protein Flapjack</div>} picture={cocoaVanilla} desc="The perfect protein-packed pick-me-up, combining rich cocoa with whole rolled oats and vanilla." onlineExclusive={false} />
+                    <FaviorateCard svgs={[svgObject.fiberBlack,svgObject.ArtificialBlack,svgObject.vegan]} titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-slate-900 text-center'>Marmite <br></br> Crunch</div>} picture={marmiteCrunch} desc="Love it or hate it, our marmite crunch brings a hit of savoury tang to roasted veg." onlineExclusive={false} />
+                    <FaviorateCard svgs={[svgObject.ArtificialPink,svgObject.portioned,svgObject.veganPink]} titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-pink-600 text-center'>Belgian <br></br> Speculoos</div>} picture={speculoos} desc="Belgian speculoos cookie dip and cinnamon pretzel sticks." onlineExclusive={true} />
+                    <FaviorateCard svgs={[svgObject.fiberOrange,svgObject.ArtificialOrange,svgObject.veganOrange]} titleTag={<div className='px-1.5 pb-2.5 mt-4 mb-5 text-3xl text-orange-500 text-center'>Smoky Barbecue <br></br> Crunch</div>} picture={bbqCrunch} desc="Barbecue flavoured peas, corn chips & chilli corn." onlineExclusive={false} />
                 </div>
                 <h3 className='text-center text-amber-800 text-4xl my-7 font-semibold'>join thousands of grazers who love their graze box</h3>
                 <div className='flex justify-center gap-2 pb-10'>
@@ -134,6 +134,7 @@ function Main() {
                 <strong>3,552</strong> 
                 reviews on
                 {svgObject.trustpilot}
+                
                 </div>
             </section>
         </main>
