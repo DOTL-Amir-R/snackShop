@@ -123,3 +123,15 @@
 .border-bot-1-color-ddd{
     border-bottom: solid 1px #ddd;
 }
+.background-color-0AA550{
+    background-color: #0AA550;
+}
+.border-2-0AA550{
+    border: solid 2px #0AA550;
+}
+.color-fff{
+    color:#fff;
+}
+.border-radius-25{
+    border-radius: 1.5625rem;
+}

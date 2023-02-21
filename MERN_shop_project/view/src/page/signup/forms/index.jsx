@@ -1,6 +1,6 @@
 import { Input } from '@material-tailwind/react';
 import { FloatLabelInput, RadioCheckBox } from '../../../components';
-import { FaTag, FaCheckCircle, FaCheck, FaCircle } from 'react-icons/fa';
+import { FaTag, FaChevronRight, FaCheck, FaCircle } from 'react-icons/fa';
 import './index.css';
 import { Radio, useRadioState } from 'pretty-checkbox-react';
 import { useState } from 'react';
@@ -82,8 +82,11 @@ export function Forms() {
                     </div>
                 </div>
 
-                <div className='text-lg text-underline mb-5'>more info</div>
-                <button className='flex'>Continue</button>
+                <div className='text-lg text-underline mb-5 flex items-center'>more info<FaChevronRight/></div>
+                <div>
+                    <button className='green-button-registration flex items-center text-lg gap-2.5 pr-2.5 py-1.5 pl-4  background-color-0AA550 border-2-0AA550 color-fff border-radius-25'><div>continue</div><FaChevronRight/></button>
+                </div>
+
                 <div className=' mt-7 ml-5'>
                     Receive exclusive offers, delicious rewards and brand new
                     snack launches to your email inbox. 
