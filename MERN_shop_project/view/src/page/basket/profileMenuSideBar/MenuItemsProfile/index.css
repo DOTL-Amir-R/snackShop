@@ -1,0 +1,8 @@
+.menu-style-profile-sidebar:hover{
+    cursor: pointer;
+    border-right: 6px green solid;
+}
+.menu-style-profile-sidebar{
+    transition: all .1s;
+    padding-right: 1.5rem;
+}
