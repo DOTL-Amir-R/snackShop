@@ -6,6 +6,7 @@ import Shop from "../page/shop";
 import Product from "../page/product";
 import { Basket } from "../page/basket";
 import { SellYourProduct } from "../page/sellYourProduct";
+import About from "../page/about";
 
 export const routes = {
     home:{
@@ -42,6 +43,10 @@ export const routes = {
         id:'7',
         path:'/sellyourproduct',
         element:<SellYourProduct/>
-
+    },
+    about:{
+        id:"6",
+        path:"/about",
+        element:<About/> 
     }
 }
