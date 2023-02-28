@@ -4,6 +4,8 @@ import { SignUp } from "../page/signup";
 import Login from "../page/login";
 import Shop from "../page/shop";
 import Product from "../page/product";
+import { Basket } from "../page/basket";
+import { SellYourProduct } from "../page/sellYourProduct";
 import About from "../page/about";
 
 export const routes = {
@@ -31,6 +33,16 @@ export const routes = {
         id:"5",
         path:"/product",
         element:<Product/>
+    },
+    basket:{
+        id:"6",
+        path:"/basket",
+        element:<Basket/>
+    },
+    sellYourProduct:{
+        id:'7',
+        path:'/sellyourproduct',
+        element:<SellYourProduct/>
     },
     about:{
         id:"6",

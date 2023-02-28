@@ -14,4 +14,20 @@
 .input-label-classes{
     left: 1.125rem;
 }
-
+.registration-check-box:hover{
+    background: 0 0;
+    border: 1px solid #a4c433;
+}
+.registration-check-box02:hover{
+    background: 0 0;
+    border: 1px solid #a4c433;
+}
+.green-button-registration:hover{
+    transition: all .3s;
+    background-color: #fff;
+    color: #0AA550;
+    gap:14px;
+}
+.green-button-registration{
+    transition: all .3s;
+}

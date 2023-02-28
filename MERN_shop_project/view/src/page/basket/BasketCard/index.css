@@ -1,0 +1,61 @@
+.basket-card-container{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    width: 80%;
+}
+.number-of-products-container{
+    border-radius:1rem ;
+    border: #7a7979 1px solid;
+    display: flex;
+}
+.icon-card-for-basket{
+    width: 10rem;
+    object-fit: cover;
+    height: 7rem;
+}
+.input-number-of-products:active{
+    border-color: ghostwhite;
+    --tw-ring-color: 0;
+    outline: 0px;
+    box-shadow: rgb(107 178 80) 0px 0px 5px 3px inset;
+    border-color: rgb(107, 178, 80);
+}
+.input-number-of-products::-webkit-outer-spin-button,
+.input-number-of-products::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+.input-number-of-products{
+    width: 2rem;
+    background-color: unset;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    border-top: none;
+    padding: 6px 6px;
+
+}
+.plus-button{
+    padding: 6.2px 8px;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    transition: all .6s;
+    border-right:0 ;
+}
+.minus-button{
+    padding: 6.2px 8px;
+    border-top-right-radius: 1rem;
+
+    border-bottom-right-radius: 1rem;
+    transition: all .6s;
+    border-left:0 ;
+}
+.minus-button:focus{
+    box-shadow: rgb(107 178 80) 0px 0px 5px 3px;
+    border-color: rgb(107, 178, 80);
+    
+}
+.plus-button:focus{
+    box-shadow: rgb(107 178 80) 0px 0px 5px 3px;
+    border-color: rgb(107, 178, 80);
+    outline: none;
+}
