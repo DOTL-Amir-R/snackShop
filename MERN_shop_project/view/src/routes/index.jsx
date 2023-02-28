@@ -4,6 +4,7 @@ import { SignUp } from "../page/signup";
 import Login from "../page/login";
 import Shop from "../page/shop";
 import Product from "../page/product";
+import About from "../page/about";
 
 export const routes = {
     home:{
@@ -30,5 +31,10 @@ export const routes = {
         id:"5",
         path:"/product",
         element:<Product/>
+    },
+    about:{
+        id:"6",
+        path:"/about",
+        element:<About/> 
     }
 }
