@@ -7,11 +7,15 @@ import boosts from "../../assets/img/boosts.png"
 import { svgObject } from '../../assets/svg'
 import { Textarea } from 'flowbite-react'
 import { useState } from 'react'
+import { Header } from "../../layout/core/header"
 
 function Product() {
     const [showCreateReview , setShowCreateReview] = useState(false)
     return (
-        <div className='bg-neutral-50'>
+        <>
+
+            <div className='bg-neutral-50'>
+
             <h5 className='bg-pink-500 text-center text-white py-2.5 text-xl'><b>You'll get your first box half price</b> (usually £4.99) </h5>
             <Breadcrumb />
             <figure className='container grid grid-cols-2'>
@@ -113,6 +117,8 @@ function Product() {
                 </div>
             </div>
         </div>
+        </>
+        
     )
 }
 
