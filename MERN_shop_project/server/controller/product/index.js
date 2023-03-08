@@ -7,6 +7,7 @@ const handelShowPtoduct = async (req, res) => {
     res.status(200).json({products:allProducts})
 }
 
+
 const handelCreateProduct = async (req, res) => {
   if (!req.body.Name) return res.status(400).json({ massage: "heyyyy noob Name kooo!?" })
   if (!req.body.price) return res.status(400).json({ massage: "heyyyy noob price kooo!?" })
