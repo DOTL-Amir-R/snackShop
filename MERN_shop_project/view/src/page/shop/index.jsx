@@ -11,10 +11,6 @@ function Shop() {
         <>
             <Header />
             <main className="bg-neutral-50">
-                <h5 className="bg-pink-500 text-center text-white py-2.5 text-xl">
-                    <b>You'll get your first box half price</b> (usually £4.99){' '}
-                </h5>
-                <Breadcrumb />
                 <div
                     style={{ backgroundImage: `URL(${grazeNewHero})` }}
                     className="py-20"
