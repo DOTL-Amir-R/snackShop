@@ -7,10 +7,10 @@ import { Radio, useRadioState } from 'pretty-checkbox-react';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { mainInstance } from './../../../api/constants.js';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { handelSingInService } from './../../../api/services';
 const signInSchema = yup.object({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
@@ -24,7 +24,7 @@ export function Forms() {
     const { register, formState: { errors }, handleSubmit } = useForm({ resolver: yupResolver(signInSchema) });
     const submitForm = async (data) => {
         try {
-            const res = await mainInstance.post("/signIn", data)
+            const res = handelSingInService(data)
             toast.success("accout created!?")
             navigate("/login")
         } catch (err) {
