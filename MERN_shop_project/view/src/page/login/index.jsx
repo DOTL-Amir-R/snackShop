@@ -2,11 +2,11 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { mainInstance } from './../../api/constants.js';
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie'
+import { handelLoginService } from './../../api/services';
 
 const loginSchema =  yup.object({
     email: yup.string().email().required(),
@@ -18,7 +18,7 @@ function Login() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm({resolver: yupResolver(loginSchema)});
     const handelLogin = async (data) => {
         try{
-            const res = await mainInstance.post("/login" , data)
+            const res = handelLoginService(data)
             toast.success("loggin in was sucessfully!?")
             console.log();
             Cookies.set('token' , res.data.token , { expires: 7 })

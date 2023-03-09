@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require("cors");
 const appRootPath = require("app-root-path")
 const mongoose = require('mongoose');
-
+const fileUpload = require("express-fileupload")
 app = express()
 
 require('dotenv').config({
@@ -10,9 +10,14 @@ require('dotenv').config({
 })
 
 app.use(cors())
-app.use(express.json({extended: true}))
+app.use(express.json({extended: false}))
 app.use(express.urlencoded({extended: true}))
-
+app.use(fileUpload({
+    createParentPath: true ,
+    limits:{
+        filesize : 2*1024*1024,
+    }
+}))
 
 mongoose.connect('mongodb://127.0.0.1:27017/snackShop').then((res)=>{
     console.log("DB conected Ok!")
@@ -20,6 +25,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/snackShop').then((res)=>{
 
 app.use('/api',require('./routes').loginRoute)
 app.use('/api',require('./routes').signInRoute)
+app.use('/api',require('./routes').createProductRoute)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{console.log(`server is run at port ${PORT}`)})
