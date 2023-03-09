@@ -8,7 +8,6 @@ export function SignUp() {
             <SignupHeader />
             <div className='flex mt-10 gap-31 justify-center'>
                 <Forms />
-                <DetailBox />
             </div>
         </div>
     );
