@@ -63,7 +63,7 @@ export function Footer() {
             <div className='flex items-center justify-center font-size-18 font-weight-400 color-gray-7a7a7a pt-2.5'>
                 <FaCopyright/>2023 nature delivered ltd
             </div>
-            <div className='flex justify-center font-size-18 font-weight-400 color-gray-7a7a7a mouse-pointer pt-2.5' >
+            <div className='flex justify-center font-size-18 font-weight-400 color-gray-7a7a7a mouse-pointer py-2.5' >
                 cookie preferences
             </div>
         </div>
