@@ -10,6 +10,7 @@ require('dotenv').config({
 })
 
 app.use(cors())
+app.use("/static", express.static(appRootPath + "/public"))
 app.use(express.json({extended: false}))
 app.use(express.urlencoded({extended: true}))
 app.use(fileUpload({
