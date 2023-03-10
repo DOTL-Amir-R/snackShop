@@ -8,8 +8,20 @@ import { svgObject } from '../../assets/svg'
 import { Textarea } from 'flowbite-react'
 import { useState } from 'react'
 import { Header } from "../../layout/core/header"
+import { useEffect } from 'react'
+import { useLocation, useParams } from 'react-router-dom'
+import { readSingleProductService } from './../../api/services'
 
 function Product() {
+    const [product , setProduct]= useState({})
+    const params = useParams()
+    const getData = async () => {
+        const res = await readSingleProductService(params.id)
+        setProduct(res.data.products)
+    }
+    useEffect(()=>{
+        getData()
+    },[])
     const [showCreateReview , setShowCreateReview] = useState(false)
     return (
         <>

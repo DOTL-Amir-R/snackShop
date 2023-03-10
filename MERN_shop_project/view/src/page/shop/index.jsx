@@ -10,8 +10,21 @@ import { DropDownMenuContainer } from '../../components/shared/DropDownMenuHover
 import { Dropdown } from 'flowbite-react';
 import { SortByMenu } from './sortByMenu';
 import { Categories } from './categories';
+import { useEffect } from 'react';
+import { handelShowProductService } from './../../api/services';
+import { useState } from 'react';
+import { uploadsURL } from './../../api/constants';
 
 function Shop() {
+    const [data , setData]= useState([])
+    const getData = async () => {
+        const res = await handelShowProductService()
+        setData(res.data.products)
+    }
+    useEffect(() => {
+        getData()    
+    }, [])
+    
     return (
         <>
             <Header />
@@ -29,72 +42,20 @@ function Shop() {
                 </div>
                 <div className="flex container pt-8 gap-4">
                     <div className="grow items-center">
-                        <Categories/>
+                        <Categories />
 
                     </div>
-                    <SortByMenu/>
+                    <SortByMenu />
                 </div>
                 <section className="grid grid-cols-4 gap-5 container py-8">
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
-                    <ProductCard
-                        name="mince pie flapjack multipack"
-                        price="599"
-                        picture={PunnetFlapjackLimitedEdition}
-                    />
+                    {
+                        data?.map((product) => { return <ProductCard
+                        name={product.name}
+                        price={product.price}
+                        picture={uploadsURL+product.picture}
+                        linkTo={"/shop/"+product.name.split(" ").join("_")}
+                    />} )
+                    }
                 </section>
             </main>
             <Footer />
