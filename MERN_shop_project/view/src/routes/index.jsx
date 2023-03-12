@@ -31,7 +31,7 @@ export const routes = {
     },
     product:{
         id:"5",
-        path:"/product",
+        path:"/shop/:id",
         element:<Product/>
     },
     basket:{

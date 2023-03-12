@@ -18,3 +18,13 @@ export const creatProductService = async (data) => {
         })
     return res
 }
+
+export const handelShowProductService = async () => {
+    const res = await mainInstance.get("/showProduct")
+    return res
+}
+
+export const readSingleProductService = async (productName) => {
+    const res = await mainInstance.get(`/showProduct?productName=${productName}`)
+    return res
+}
