@@ -1,10 +1,15 @@
 const Product = require('./../../model/Product/index.js').Product;
 const sharp = require('sharp');
+const { Review } = require('../../model/review/index.js');
 const getPath = require('./../../utils/getPath.js').getPath; 
 const handelShowPtoduct = async (req, res) => {
     if(req.query.productName) {
       const singleProduct = await Product.findOne({name : req.query.productName.split("_").join(" ") })
-      if (singleProduct) return res.status(200).json({products:singleProduct})
+      if (singleProduct){
+        const simularProducts = await Product.find({category : singleProduct.category }).limit(4)
+        const reviews = await Review.find({nameOfProduct : singleProduct.name})
+        return res.status(200).json({products:singleProduct , simularProducts , reviews})
+      } 
       return res.status(404).json({massage:"404: product not founded"})
     }
     const allProducts = await Product.find({})
