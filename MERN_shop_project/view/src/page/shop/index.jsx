@@ -16,7 +16,10 @@ import { handelShowProductService } from './../../api/services';
 import { useState } from 'react';
 import { uploadsURL } from './../../api/constants';
 
+
 function Shop() {
+    
+
     const [data, setData] = useState([]);
     const getData = async () => {
         const res = await handelShowProductService();
@@ -25,6 +28,9 @@ function Shop() {
     useEffect(() => {
         getData();
     }, []);
+
+
+    
 
     return (
         <>
@@ -48,11 +54,12 @@ function Shop() {
                     <div className="text-white bg-green-500 hover:bg-green-600 ml-4 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center">
                         <Filter />
                     </div>
-                    <div className="text-white bg-green-500 hover:bg-green-600 ml-4 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-l-3xl text-sm pl-5 pr-2 py-2.5 text-center">
-                        <SortByMenu />
+                    <div className=" ml-4 py-1.5  font-medium  text-lg  text-center">
+                        Sort by  
                     </div>
-                    <div className="text-white bg-green-500  focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-r-3xl text-sm px-5 py-2.5 text-center">
-                    | none
+                    <div className="text-white bg-green-500 focus:ring-4 pl-1.5 focus:outline-none focus:ring-green-300 font-medium rounded-r-3xl text-sm pr-5 pr-2 py-2.5 text-center">
+                            <SortByMenu/>
+
                     </div>
                 </div>
                 <section className="grid grid-cols-4 gap-5 container py-8">
