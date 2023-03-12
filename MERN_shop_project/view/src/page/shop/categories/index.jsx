@@ -4,7 +4,7 @@ export function Categories() {
     return (
         <>
             <Dropdown label="Category" inline={true} >
-                <div className='flex'>
+                <div className=''>
                 <Dropdown.Item>Vegeterian</Dropdown.Item>
                 <Dropdown.Item>Free suger</Dropdown.Item>
                 <Dropdown.Item>Heavy suger</Dropdown.Item>

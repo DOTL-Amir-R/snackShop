@@ -1,6 +1,8 @@
 // import { svgObject } from '../../../assets/svg';
+// import { SimpleButton } from '../../../components/shared/SinpleButton';
 import {
     FaUser,
+    FaShoppingBasket,
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import './index.css';
@@ -13,7 +15,7 @@ export function Header() {
                 <div className="font-weight-700 font-size-27 py-2.5">ARMHA</div>
                 <button onClick={()=>navigate('/')}>Home</button>
                 <button onClick={()=>navigate('/shop')}>Shop</button>
-                <button onClick={()=>navigate('/sellyourproduct')}>Sell your product</button>
+                <button onClick={()=>navigate('/about')}>About</button>
 
             </div>
             <div className="flex gap-5 items-center">
@@ -21,9 +23,9 @@ export function Header() {
                     <FaUser size="1.2rem" />
                     log in
                 </button>
-                <button onClick={()=>navigate('/signup')} className="flex items-center gap-1">
-
-                    Sign up
+                <button onClick={()=>navigate('/basket')} className="flex items-center gap-1">
+                    <FaShoppingBasket size="1.2rem" />
+                    Basket
                 </button>
             </div>
         </nav>
