@@ -58,7 +58,7 @@ function Shop() {
                         Sort by  
                     </div>
                     <div className="text-white bg-green-500 focus:ring-4 pl-1.5 focus:outline-none focus:ring-green-300 font-medium rounded-r-3xl text-sm pr-5 pr-2 py-2.5 text-center">
-                            <SortByMenu/>
+                            <SortByMenu setData={setData}/>
 
                     </div>
                 </div>
