@@ -7,7 +7,7 @@ export function BasketProduct() {
     return (
         <>
         
-            <div className="flex flex-col w-4/5 container">
+            <div className="col-span-3 flex flex-col">
                 <BasketCard />
                 <BasketCard />
                 <BasketCard />

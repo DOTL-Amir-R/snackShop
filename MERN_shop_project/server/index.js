@@ -27,6 +27,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/snackShop').then((res)=>{
 app.use('/api',require('./routes').loginRoute)
 app.use('/api',require('./routes').signInRoute)
 app.use('/api',require('./routes').createProductRoute)
-
+app.use('/api',require('./routes').showProductRoute)
+app.use('/api',require('./routes').createReviewRoute)
+app.use('/api',require('./routes').showReviewRoute)
 const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{console.log(`server is run at port ${PORT}`)})
