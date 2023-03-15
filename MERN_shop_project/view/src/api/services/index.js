@@ -29,6 +29,6 @@ export const readSingleProductService = async (productName) => {
     return res
 }
 export const handleSortProduct = async (data)=>{
-    const res = await mainInstance.post('/sortByProduct',data)
-    return res
+    return mainInstance.post('/sortByProduct',data)
+
 }

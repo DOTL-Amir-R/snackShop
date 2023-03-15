@@ -2,44 +2,35 @@ import { handleSortProduct } from '../../../api/services';
 import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
 
-export function Categories({ setData }) {
+export function Categories({ setData,setError }) {
     const [sortByText, setSortByText] = useState('');
     async function handleSortBy(e) {
         const id = e.target.innerText;
         switch (id) {
             case 'Vegeterian':
                 setSortByText('Vegeterian');
-                return handleSortProduct({ sortBy: 'Vegeterian' }).then(
+                return handleSortProduct({ category: 'vegeterian' }).then(
                     (res) => {
-                        setData(res.data.sortedProductExpensive);
+                        console.log(res.data)
+                        setData(res.data);
                     },
                 );
-
-            // case 'Sort by Heavier Weight':
-            //     setSortByText('Heavier Weight');
-            //     return handleSortProduct({sortBy:'heavierWeight'}).then((res)=>{console.log(res.data.sortedProductHeavierWeight) ,setData( res.data.sortedProductHeavierWeight)})
-
             case 'Free suger':
                 setSortByText('Free suger');
-                return handleSortProduct({ sortBy: 'Free suger' }).then(
+                return handleSortProduct({ category: 'Free suger' }).then(
                     (res) => {
-                        setData(res.data.sortedProduct);
+                        setData(res.data);
                     },
                 );
             case 'Heavy suger':
                 setSortByText('Heavy suger');
-                return handleSortProduct({ sortBy: 'Heavy suger' }).then(
-                    (res) => {
-                        setData(res.data.sortedProduct);
-                    },
-                );
-
-            // case 'most popular':
-            //     handleSortProduct({sortBy:'mostPopular'})
-            //     return setSortByText('most popular');
-            // case 'less popular':
-            //     handleSortProduct({sortBy:'lessPopular'})
-            //     return setSortByText('less popular');
+                return handleSortProduct({ category: 'Heavy suger' }).then((res) => {
+                    setData(res.data);
+                  }).catch((er)=>{
+                     const  error = er.response.data.message
+                     setData([]);
+                     setError(error) 
+                  });
             default:
         }
     }
