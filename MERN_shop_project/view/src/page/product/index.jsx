@@ -5,22 +5,22 @@ import RatingCard from '../../components/shared/RatingCard'
 import { svgObject } from '../../assets/svg'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
-import { readSingleProductService } from './../../api/services'
+import { Link, useLocation, useParams } from 'react-router-dom'
+import { readSingleProductService, showReviewService } from './../../api/services'
 import { uploadsURL } from './../../api/constants'
-import ReactStars from "react-rating-stars-component";
+import CreateReviewCart from './CreateReviewCart'
+import Reviews from './Reviews'
 
 function Product() {
     const location = useLocation()
-    const [product, setProduct] = useState({})
+    const [product, setProduct] = useState(null)
     const [simulorProducts, setSimulorProducts] = useState([])
     const [reviews, setreviews] = useState([])
     const [orderNumber, setOrderNumber] = useState(1)
-
+    const [createReview, setCreateReview] = useState(0)
     const params = useParams()
     const getData = async () => {
         const res = await readSingleProductService(params.id)
-        console.log(res.data);
         setProduct(res.data.products)
         setSimulorProducts(res.data.simularProducts)
         setreviews(res.data.reviews)
@@ -28,8 +28,7 @@ function Product() {
     useEffect(() => {
         getData()
         setOrderNumber(1)
-    }, [location])
-    console.log(product)
+    }, [location, createReview])
     const [showCreateReview, setShowCreateReview] = useState(false)
     const addSingleProductToBasket = () => {
         const productsInBasket = localStorage.getItem("productsInBasket")
@@ -47,13 +46,10 @@ function Product() {
             console.log(listOfBasket)
         }
     }
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
+
     return (
         <>
-            <div className='bg-neutral-50'>
-
+            {product ? <div className='bg-neutral-50'>
                 <h5 className='bg-pink-500 text-center text-white py-2.5 text-xl'><b>You'll get your first box half price</b> (usually £4.99) </h5>
                 <Breadcrumb />
                 <figure className='container grid grid-cols-2'>
@@ -125,35 +121,23 @@ function Product() {
                         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" onClick={() => setShowCreateReview(!showCreateReview)} className='underline' type='button'>write a review</button>
                     </div>
                     {showCreateReview && (
-                        <div style={{ marginTop: "20px" }} className='bg-white p-5 w-full container mt-5 shadow'>
-                            <h3 className='text-2xl mb-5'>write a review</h3>
-                            <h3 className='text-lg text-gray-800 mt-4'>rating</h3>
-                            <ReactStars
-                                count={5}
-                                onChange={ratingChanged}
-                                size={48}
-                                activeColor="#ffd700"
-                                />
-                            <h5 className='text-lg text-gray-800'>review title</h5>
-                            <input type="text" name="email" id="email" className="border border-gray-300 text-gray-900 text-sm mt-3 focus:ring-green-300 focus:border-green-400 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="give your review a title" required />
-                            <textarea className='w-full border-gray-300 h-72 mt-4' placeholder='write your comments here' />
-                            <div className='flex justify-end mt-3'>
-                                <button onClick={() => setShowCreateReview(!showCreateReview)} className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center">submit review</button>
-                            </div>
-                        </div>
+                        <CreateReviewCart productName={product.name} ShowCreateReview={setShowCreateReview} CreateReview={setCreateReview} CreateReviewValue={createReview} />
                     )
-
                     }
                     {
-                        reviews.map((review) => <RatingCard />) || <h2 className=' text-center mt-8 text-lg'>no review be first one</h2>
+                        reviews ? <Reviews reviews={reviews} /> : <h2 className=' text-center mt-8 text-lg'>no review be first one</h2>
                     }
                     <div className='grid grid-cols-3 gap-5 my-8'>
 
                     </div>
                 </div>
-            </div>
+            </div> : <div className='w-screen h-screen flex justify-center items-center flex-col'>
+                <h1 className='text-3xl text-gray-800 mb-8'>404 : product not found </h1>
+                <p className='text-lg'>
+                    go to <Link className='underline text-blue-500' to="/shop">shop</Link>
+                </p>
+            </div>}
         </>
-
     )
 }
 
