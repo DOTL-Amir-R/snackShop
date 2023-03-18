@@ -1,10 +1,11 @@
 import { RangeInput } from '../../../components/shared/RangeInput';
 import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
-import './index.css'
-export function Filter() {
+import './index.css';
+import { handleSortProduct } from '../../../api/services';
+export function Filter({setData,filteredCategoryData}) {
     const [test, setTest] = useState(true);
-    const [inputValue,setInputValue] = useState()
+    const [inputValue, setInputValue] = useState();
     return (
         <>
             {/* <Dropdown label="Filter" inline={true}>
@@ -24,19 +25,33 @@ export function Filter() {
                 >
                     Filter
                 </div>
-                <div className='absolute top-14 drop-down-filter '                        style={
-                            test
-                                ? { display: 'none' }
-                                : { display: 'flex', flexDirection: 'column' }
-                        }>
-                    <div
-                    className='text-center'
- 
-                    >
-                        {inputValue?inputValue+'$':'0$'}
-                        <RangeInput onChange={(e)=>{
-                            setInputValue(e.target.value)
-                        }}/>
+                <div
+                    className="absolute top-14 drop-down-filter "
+                    style={
+                        test
+                            ? { display: 'none' }
+                            : { display: 'flex', flexDirection: 'column' }
+                    }
+                >
+                    <div className="text-center">
+                        {inputValue ?'more than '+ inputValue + '$' : 'more than 1000$'}
+                        <RangeInput
+                            onChange={(e) => {
+                                
+
+                                setTimeout(() => {
+                                    const filteredPrice = e.target.value
+                                    console.log(filteredPrice)
+                                    setInputValue(filteredPrice);
+                                    return handleSortProduct({filterMethod:'moreThanMethod',filteredCategoryData,filteredPrice}).then((res)=>{
+                                        // setData(res.data.sortedProductExpensive)
+                                        console.log(res.data)
+                    
+                                    })
+                                }, 3000);
+
+                            }}
+                        />
                     </div>
                 </div>
             </div>

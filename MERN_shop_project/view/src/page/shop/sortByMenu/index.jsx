@@ -13,10 +13,8 @@ export function SortByMenu({setData,data}) {
             // console.log(data)
                 setSortByText('most expensive');
                 return handleSortProduct({sortBy:'expensive',data}).then((res)=>{
-                    // const test = res.data.sortedProductExpensive
                     setData(res.data.sortedProductExpensive)
-                    // setData(...res.data.sortedProductExpensive)
-                    // setData( res.data.sortedProductExpensive)
+
                 })
                 
             // case 'Sort by Heavier Weight':

@@ -2,10 +2,22 @@ const { Product } = require("../../model/Product");
 
 const handleSortByProduct = async (req, res) => {
   // console.log(req.body.sortBy)
-  console.log(req?.body)
+  // console.log(req?.body)
   const sortByMethod = req?.body?.sortBy;
   const categoryMethod = req?.body?.category;
   const allProducts = await Product.find({});
+  const filterMethod = req?.body?.filterMethod
+  console.log(filterMethod)
+  switch (filterMethod) {
+
+    case 'moreThanMethod':
+      const filterPrice= req.body.filteredPrice
+      const products = [req.body.filteredCategoryData]
+      const test = products.filter((pr)=>{pr.price>filterPrice})
+      console.log(products[0])
+      return;
+  
+  }
   switch (categoryMethod) {
     case "vegeterian":
       const vegeterianCategoryArray = [];
