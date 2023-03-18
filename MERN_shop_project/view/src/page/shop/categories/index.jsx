@@ -3,8 +3,10 @@ import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
 
 export function Categories({ setData,setError }) {
+    const [sendable , setSendable] = useState(true)
     const [sortByText, setSortByText] = useState('');
     async function handleSortBy(e) {
+        setSendable(!sendable)
         const id = e.target.innerText;
         switch (id) {
             case 'Vegeterian':
@@ -38,6 +40,7 @@ export function Categories({ setData,setError }) {
         <div
             onClick={(e) => {
                 handleSortBy(e);
+                console.log('gg')
             }}
         >
             <Dropdown

@@ -1,0 +1,9 @@
+/******************utils*****************/
+.drop-down-filter{
+    background: #fafafa;
+    padding: 2rem 1rem;
+    box-shadow: 1;
+    width: 12rem;
+    border: 1px solid;
+    border-radius: 1rem;
+}

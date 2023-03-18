@@ -3,14 +3,21 @@ import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
 
 
-export function SortByMenu({setData}) {
+export function SortByMenu({setData,data}) {
+    
     const [sortByText, setSortByText] = useState('');
     async function  handleSortBy(e) {
         const id = e.target.innerText;
         switch (id) {
             case 'Sort by most expensive':  
+            // console.log(data)
                 setSortByText('most expensive');
-                return handleSortProduct({sortBy:'expensive'}).then((res)=>{setData( res.data.sortedProductExpensive)})
+                return handleSortProduct({sortBy:'expensive',data}).then((res)=>{
+                    // const test = res.data.sortedProductExpensive
+                    setData(res.data.sortedProductExpensive)
+                    // setData(...res.data.sortedProductExpensive)
+                    // setData( res.data.sortedProductExpensive)
+                })
                 
             // case 'Sort by Heavier Weight':
             //     setSortByText('Heavier Weight');
@@ -18,7 +25,7 @@ export function SortByMenu({setData}) {
 
             case 'Sort by Cheapest':
                 setSortByText('Cheapest');
-                return handleSortProduct({sortBy:'cheapest'}).then((res)=>{setData( res.data.sortedProduct)})
+                return handleSortProduct({sortBy:'cheapest',data}).then((res)=>{setData( res.data.sortedProduct)})
 
             // case 'most popular':
             //     handleSortProduct({sortBy:'mostPopular'})
