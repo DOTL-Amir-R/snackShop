@@ -18,9 +18,9 @@ function Login() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm({resolver: yupResolver(loginSchema)});
     const handelLogin = async (data) => {
         try{
-            const res = handelLoginService(data)
+            const res = await handelLoginService(data)
             toast.success("loggin in was sucessfully!?")
-            console.log();
+            console.log(res.data.token)
             Cookies.set('token' , res.data.token , { expires: 7 })
             navigate("/")
         }

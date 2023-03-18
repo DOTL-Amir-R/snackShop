@@ -8,18 +8,19 @@ export function Basket() {
     return(
         <>
             <Header/>
-            <div className='w-2/5 flex self-center ml-8'>
-                    <FloatLabelInput
-                        type="search"
-                        labelText="search for products"
-                        classNameLabel="text-lg color-black-444 input-label-classes "
-                        classNameInput="border-none input-classes"
-                        classNameContainer="pb-7"
-                    />
-                </div>
-            <div className="pt-5 flex">
+            <div className=" grid grid-cols-4 container">
                 <BasketProduct/>
-                <ProfileMenuSidebar/>
+                <div className="flex flex-col gap-3 p-5 shadow-sm rounded-lg mx-4 border h-fit">
+                    <h1 className="text-2xl text-gray-800">total price of basket:</h1>
+                    <p className="text-lg text-gray-700">$2023</p>
+                    <div className="flex gap-5">
+                        <input className="rounded-sx  w-32 grow" type="text" placeholder="discount code" />
+                        <button className="text-white bg-green-500 rounded-xl px-3 py-2">submit</button>
+                    </div>
+                    <h3 className="text-xl text-gray-800">price to pay:</h3>
+                    <p className="text-lg text-gray-700">$2002</p>
+                    <button className="text-white bg-green-500 rounded-xl px-3 py-2">pay</button>
+                </div>
             </div>
             <Footer/>
         </>
