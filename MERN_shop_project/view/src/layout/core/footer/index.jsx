@@ -1,8 +1,10 @@
 
 import { FaCopyright, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom';
 import '../../global/index.css';
 
 export function Footer() {
+    const navigate = useNavigate()
     return(
         <div className='flex flex-col container'>
             <div className='flex justify-center gap-2.5 pb-5'>
@@ -12,27 +14,36 @@ export function Footer() {
             </div>
 
             <div className='flex justify-around flex-wrap font-size-18 font-weight-400 border-top-1-color-ddd border-bot-1-color-ddd padd-top-bot-12'>
-                <div className='mouse-pointer'>
+                {/* <div className='mouse-pointer'>
                     careers
-                </div>
-                <div className='mouse-pointer'>
+                </div> */}
+                {/* <div className='mouse-pointer'>
                     how it works
-                </div>
-                <div className='mouse-pointer'>
+                </div> */}
+                {/* <div className='mouse-pointer'>
                     health
-                </div>
-                <div className='mouse-pointer'>
+                </div> */}
+                {/* <div className='mouse-pointer'>
                     gifts
-                </div>
-                <div className='mouse-pointer'>
+                </div> */}
+                {/* <div className='mouse-pointer'>
                     in stores
-                </div>
-                <div className='mouse-pointer'>
-                    help
-                </div>
+                </div> */}
+                <button onClick={()=>{navigate('/about')}} className='mouse-pointer'>
+                    about
+                </button >
+                <button onClick={()=>{navigate('/shop')}} className='mouse-pointer'>
+                    in stores
+                </button >
+                <button onClick={()=>{navigate('/')}} className='mouse-pointer'>
+                    Homes
+                </button >
+                <button onClick={()=>{navigate('/help')}} className='mouse-pointer'>
+                    Help
+                </button >
             </div>
             <div className='flex gap-5 justify-center flex-wrap font-size-18 font-weight-400 color-gray-7a7a7a pt-5'>
-                <div className='mouse-pointer'>
+                {/* <div className='mouse-pointer'>
                     terms
                 </div>
                 <div className='mouse-pointer'>
@@ -55,7 +66,7 @@ export function Footer() {
                 </div>
                 <div className='mouse-pointer'>
                     press
-                </div>
+                </div> */}
             </div>
             <div className='flex justify-center pt-2.5'>
                 LOGO
