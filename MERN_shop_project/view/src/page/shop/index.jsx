@@ -17,12 +17,14 @@ import { useState } from 'react';
 import { uploadsURL } from './../../api/constants';
 
 function Shop() {
+    const [staticData , setStaticData] = useState()
     const [data, setData] = useState([]);
     const [error, setError] = useState([]);
     console.log(data);
     const getData = async () => {
         const res = await handelShowProductService();
         setData(res.data.products);
+        setStaticData(res.data.products);
     };
     useEffect(() => {
         getData();
@@ -45,10 +47,10 @@ function Shop() {
                 </div>
                 <div className="flex container pt-8 items-center">
                     <div className="text-white bg-green-500 hover:bg-green-600 ml-4 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center">
-                        <Categories setData={setData} setError={setError } />
+                        <Categories setData={setData} setError={setError} setStaticData={setStaticData}/>
                     </div>
                     {/* <div className="text-white bg-green-500 hover:bg-green-600 ml-4 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center"> */}
-                        <Filter filteredCategoryData={data}/>
+                        <Filter setData={setData} filteredCategoryData={staticData} />
                     {/* </div> */}
                     <div className=" ml-4 py-1.5  font-medium  text-lg  text-center">
                         Sort by

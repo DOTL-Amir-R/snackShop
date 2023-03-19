@@ -13,21 +13,31 @@ export function Categories({ setData,setError }) {
                 setSortByText('Vegeterian');
                 return handleSortProduct({ category: 'vegeterian' }).then(
                     (res) => {
-                        console.log(res.data)
                         setData(res.data);
+                        setStaticData(res.data)
                     },
-                );
+                ).catch((er)=>{
+                    const  error = er.response.data.message
+                    setData([]);
+                    setError(error) 
+                 });
             case 'Free suger':
                 setSortByText('Free suger');
                 return handleSortProduct({ category: 'Free suger' }).then(
                     (res) => {
                         setData(res.data);
+                        setStaticData(res.data)
                     },
-                );
+                ).catch((er)=>{
+                    const  error = er.response.data.message
+                    setData([]);
+                    setError(error) 
+                 });
             case 'Heavy suger':
                 setSortByText('Heavy suger');
                 return handleSortProduct({ category: 'Heavy suger' }).then((res) => {
                     setData(res.data);
+                    setStaticData(res.data)
                   }).catch((er)=>{
                      const  error = er.response.data.message
                      setData([]);

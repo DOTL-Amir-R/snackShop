@@ -7,15 +7,21 @@ const handleSortByProduct = async (req, res) => {
   const categoryMethod = req?.body?.category;
   const allProducts = await Product.find({});
   const filterMethod = req?.body?.filterMethod
-  console.log(filterMethod)
+  // console.log(filterMethod)
   switch (filterMethod) {
 
-    case 'moreThanMethod':
-      const filterPrice= req.body.filteredPrice
-      const products = [req.body.filteredCategoryData]
-      const test = products.filter((pr)=>{pr.price>filterPrice})
-      console.log(products[0])
-      return;
+    case 'minMaxPrice':
+      const filterMaximumPrice= (req.body.maximumPrice)?req.body.maximumPrice:10000;
+      const filterMinimumPrice= (req?.body?.minimumPrice)?req.body.minimumPrice:1000;
+      const products = req?.body?.filteredCategoryData;
+      const filteredByMinPrice = products.filter(pr1=>{return (pr1.price > filterMinimumPrice || pr1.price === filterMinimumPrice)});
+      const filteredByMaxPrice = filteredByMinPrice.filter(pr2=>{return (pr2.price < filterMaximumPrice || pr2.price === filterMaximumPrice)});
+
+       console.log(filterMinimumPrice,'filteredByMinPrice');
+      // console.log(products);
+      console.log(filterMaximumPrice,'filteredByMaxPrice');
+      return res.status(200).json({filteredByMaxPrice});
+      
   
   }
   switch (categoryMethod) {

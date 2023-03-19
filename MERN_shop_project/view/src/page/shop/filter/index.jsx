@@ -4,23 +4,16 @@ import { useState } from 'react';
 import './index.css';
 import { handleSortProduct } from '../../../api/services';
 export function Filter({setData,filteredCategoryData}) {
-    const [test, setTest] = useState(true);
-    const [inputValue, setInputValue] = useState();
+    const [minimumPrice, setMinimumPrice] = useState('');
+    const [maximumPrice, setMaximumPrice] = useState('');
+    const [hoverOrNot, setHoverOrNot] = useState(true);
     return (
         <>
-            {/* <Dropdown label="Filter" inline={true}>
-
-                    <Dropdown.Item >
-                        <RangeInput/></Dropdown.Item>
-
-                    <Dropdown.Item>Sort by weight</Dropdown.Item>
-                    <Dropdown.Item>Sort by high to low price</Dropdown.Item>
-            </Dropdown> */}
             <div className="flex flex-col items-center relative">
                 <div
                     className="text-white  bg-green-500 hover:bg-green-600 cursor-pointer ml-4 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-sm px-5 py-2.5 text-center"
                     onClick={() => {
-                        setTest(!test);
+                        setHoverOrNot(!hoverOrNot);
                     }}
                 >
                     Filter
@@ -28,25 +21,42 @@ export function Filter({setData,filteredCategoryData}) {
                 <div
                     className="absolute top-14 drop-down-filter "
                     style={
-                        test
+                        hoverOrNot
                             ? { display: 'none' }
-                            : { display: 'flex', flexDirection: 'column' }
+                            : { display: 'flex', flexDirection: 'row' }
                     }
                 >
                     <div className="text-center">
-                        {inputValue ?'more than '+ inputValue + '$' : 'more than 1000$'}
+                        {minimumPrice ?minimumPrice + '$' : '1000$'}
                         <RangeInput
-                            onChange={(e) => {
+                        min='1000'
+                        max="5000"
+                        onClick={ (e) => {
                                 
+                                 setMinimumPrice(e.target.value);
 
                                 setTimeout(() => {
-                                    const filteredPrice = e.target.value
-                                    console.log(filteredPrice)
-                                    setInputValue(filteredPrice);
-                                    return handleSortProduct({filterMethod:'moreThanMethod',filteredCategoryData,filteredPrice}).then((res)=>{
-                                        // setData(res.data.sortedProductExpensive)
-                                        console.log(res.data)
+
+                                    return handleSortProduct({filterMethod:'minMaxPrice',filteredCategoryData,minimumPrice:e.target.value}).then((res)=>{
+                                        setData(res.data.filteredByMaxPrice)
                     
+                                    })
+                                }, 3000);
+  
+                            }}
+                        />
+                    </div>
+                    <div className="text-center">
+                        {maximumPrice ?maximumPrice + '$' : '10000$'}
+                        <RangeInput
+                            min='5000'
+                            max="10000"
+                            onClick={(e) => {
+                                
+                                setMaximumPrice(e.target.value);
+                                setTimeout(() => {
+                                    return handleSortProduct({filteredCategoryData,filterMethod:'minMaxPrice',maximumPrice:e.target.value}).then((res)=>{
+                                        setData(res.data.filteredByMaxPrice)
                                     })
                                 }, 3000);
 
