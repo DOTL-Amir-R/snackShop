@@ -2,7 +2,7 @@ import { handleSortProduct } from '../../../api/services';
 import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
 
-export function Categories({ setData,setError }) {
+export function Categories({ setData,setError,setStaticData }) {
     const [sendable , setSendable] = useState(true)
     const [sortByText, setSortByText] = useState('');
     async function handleSortBy(e) {

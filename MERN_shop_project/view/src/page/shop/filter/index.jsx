@@ -3,7 +3,7 @@ import { Dropdown } from 'flowbite-react';
 import { useState } from 'react';
 import './index.css';
 import { handleSortProduct } from '../../../api/services';
-export function Filter({setData,filteredCategoryData}) {
+export function Filter({ setData, filteredCategoryData }) {
     const [minimumPrice, setMinimumPrice] = useState('');
     const [maximumPrice, setMaximumPrice] = useState('');
     const [hoverOrNot, setHoverOrNot] = useState(true);
@@ -27,39 +27,43 @@ export function Filter({setData,filteredCategoryData}) {
                     }
                 >
                     <div className="text-center">
-                        {minimumPrice ?minimumPrice + '$' : '1000$'}
+                        {minimumPrice ? minimumPrice + '$' : '1000$'}
                         <RangeInput
-                        min='1000'
-                        max="5000"
-                        onClick={ (e) => {
-                                
-                                 setMinimumPrice(e.target.value);
+                            defaultValue="1000"
+                            min="1000"
+                            max="5000"
+                            onClick={(e) => {
+                                setMinimumPrice(e.target.value);
 
                                 setTimeout(() => {
-
-                                    return handleSortProduct({filterMethod:'minMaxPrice',filteredCategoryData,minimumPrice:e.target.value}).then((res)=>{
-                                        setData(res.data.filteredByMaxPrice)
-                    
-                                    })
+                                    return handleSortProduct({
+                                        filterMethod: 'minMaxPrice',
+                                        filteredCategoryData,
+                                        minimumPrice: e.target.value,
+                                    }).then((res) => {
+                                        setData(res.data.filteredByMaxPrice);
+                                    });
                                 }, 3000);
-  
                             }}
                         />
                     </div>
                     <div className="text-center">
-                        {maximumPrice ?maximumPrice + '$' : '10000$'}
+                        {maximumPrice ? maximumPrice + '$' : '10000$'}
                         <RangeInput
-                            min='5000'
+                            defaultValue="10000"
+                            min="5000"
                             max="10000"
                             onClick={(e) => {
-                                
                                 setMaximumPrice(e.target.value);
                                 setTimeout(() => {
-                                    return handleSortProduct({filteredCategoryData,filterMethod:'minMaxPrice',maximumPrice:e.target.value}).then((res)=>{
-                                        setData(res.data.filteredByMaxPrice)
-                                    })
+                                    return handleSortProduct({
+                                        filteredCategoryData,
+                                        filterMethod: 'minMaxPrice',
+                                        maximumPrice: e.target.value,
+                                    }).then((res) => {
+                                        setData(res.data.filteredByMaxPrice);
+                                    });
                                 }, 3000);
-
                             }}
                         />
                     </div>
