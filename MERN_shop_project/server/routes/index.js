@@ -7,3 +7,6 @@ exports.signInRoute = router.post("/signIn" , require("./../controller/auth/inde
 exports.createProductRoute = router.post("/creatProduct" , require("./../controller/product/index.js").handelCreateProduct)
 exports.showProductRoute = router.get("/showProduct" , require("./../controller/product/index.js").handelShowPtoduct)
 exports.sortByProductRoute = router.post("/sortByProduct" , handleSortByProduct)
+exports.createReviewRoute = router.post("/createReview" , require("./../controller/review/index.js").handelCreateReview)
+exports.showReviewRoute = router.get("/showReview" , require("./../controller/review/index.js").handelShoweReview)
+
